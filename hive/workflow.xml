@@ -13,7 +13,7 @@
                 </property>
             </configuration>
             <jdbc-url>${jdbcURL}</jdbc-url>
-            <script>hive.sql</script>
+            <script>script.sql</script>
         </hive2>
         <ok to="end"/>
         <error to="fail"/>
