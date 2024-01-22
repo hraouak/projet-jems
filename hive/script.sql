@@ -16,5 +16,5 @@ ref_deps STRING,
 geolocalisation STRING,
 date_arrete_attribution_appellation STRING )
 ROW FORMAT DELIMITED 
-FIELDS TERMINATED BY ','
+FIELDS TERMINATED BY ';'
 LOCATION '/user/mapr/projet-jems/data';
