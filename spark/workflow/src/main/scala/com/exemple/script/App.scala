@@ -1,4 +1,4 @@
-package com.example.script
+package com.exemple.script
 
 import org.apache.spark.sql.SparkSession
 import java.io._
