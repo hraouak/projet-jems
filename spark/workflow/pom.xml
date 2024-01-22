@@ -1,5 +1,6 @@
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.exemple</groupId>
   <name>${project.artifactId}</name>
@@ -30,9 +31,6 @@
       <version>${scala.version}</version>
     </dependency>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <!-- Test -->
     <dependency>
       <groupId>junit</groupId>
@@ -59,7 +57,6 @@
       <scope>test</scope>
     </dependency>
 
->>>>>>> 95a2c4ae7670422e92bf357bbbc674913bb58f3e
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-core_${scala.compat.version}</artifactId>
@@ -72,52 +69,7 @@
       <version>${spark.version}</version>
       <scope>compile</scope>
     </dependency>
-<<<<<<< HEAD
-=======
-    <!-- Test -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_${scala.compat.version}</artifactId>
-      <version>3.0.5</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-core_${scala.compat.version}</artifactId>
-      <version>${spec2.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-junit_${scala.compat.version}</artifactId>
-      <version>${spec2.version}</version>
-      <scope>test</scope>
-    </dependency>
 
-
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_${scala.compat.version}</artifactId>
-            <version>${spark.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_${scala.compat.version}</artifactId>
-            <version>${spark.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
->>>>>>> parent of 2326990... Update pom.xml
-=======
-
->>>>>>> 95a2c4ae7670422e92bf357bbbc674913bb58f3e
   </dependencies>
 
   <build>
@@ -144,8 +96,7 @@
           </execution>
         </executions>
       </plugin>
-<<<<<<< HEAD
-=======
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -155,6 +106,7 @@
           <skipTests>true</skipTests>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest-maven-plugin</artifactId>
@@ -176,57 +128,19 @@
         </executions>
       </plugin>
 
->>>>>>> 95a2c4ae7670422e92bf357bbbc674913bb58f3e
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.21.0</version>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
         <configuration>
-          <!-- Tests will be run with scalatest-maven-plugin instead -->
-          <skipTests>true</skipTests>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.exemple.script.App</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
-<<<<<<< HEAD
-      <plugin>
-        <groupId>org.scalatest</groupId>
-        <artifactId>scalatest-maven-plugin</artifactId>
-        <version>2.0.0</version>
-        <configuration>
-          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-          <junitxml>.</junitxml>
-          <filereports>TestSuiteReport.txt</filereports>
-          <!-- Comma separated list of JUnit test class names to execute -->
-          <jUnitClasses>samples.AppTest</jUnitClasses>
-        </configuration>
-        <executions>
-          <execution>
-            <id>test</id>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.2.0</version>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <mainClass>com.exemple.script.App</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-
-
-=======
->>>>>>> 95a2c4ae7670422e92bf357bbbc674913bb58f3e
 
     </plugins>
   </build>
