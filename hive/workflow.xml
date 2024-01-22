@@ -4,6 +4,7 @@
     <fork name="fork-node">
         <path start="hive2-node1"/>
         <path start="hive2-node2"/>
+        <path start="hive2-node3"/>
     </fork>
 
     <action name="hive2-node1">
@@ -42,7 +43,7 @@
         <error to="fail"/>
     </action>
 
-        <action name="hive2-node2">
+        <action name="hive2-node3">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
