@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow-app xmlns="uri:oozie:workflow:0.5" name="hive2-wf">
-    <start to="hive2-node"/>
-    <action name="hive2-node">
+    <start to="fork-node"/>
+    <fork name="fork-node">
+        <path start="hive2-node1"/>
+        <path start="hive2-node2"/>
+    </fork>
+
+    <action name="hive2-node1">
         <hive2 xmlns="uri:oozie:hive2-action:0.1">
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
@@ -13,14 +18,52 @@
                 </property>
             </configuration>
             <jdbc-url>${jdbcURL}</jdbc-url>
-            <script>script.sql</script>
+            <script>artist.sql</script>
         </hive2>
-        <ok to="end"/>
+        <ok to="join-node"/>
         <error to="fail"/>
     </action>
+
+    <action name="hive2-node2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare></prepare>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <jdbc-url>${jdbcURL}</jdbc-url>
+            <script>museum.sql</script>
+        </hive2>
+        <ok to="join-node"/>
+        <error to="fail"/>
+    </action>
+
+        <action name="hive2-node2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare></prepare>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <jdbc-url>${jdbcURL}</jdbc-url>
+            <script>work.sql</script>
+        </hive2>
+        <ok to="join-node"/>
+        <error to="fail"/>
+    </action>
+
+    <join name="join-node" to="end"/>
+
     <kill name="fail">
         <message>Hive2 (Beeline) action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
     </kill>
     <end name="end"/>
 </workflow-app>
-
