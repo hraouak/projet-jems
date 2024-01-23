@@ -11,10 +11,12 @@ echo -n "Your choice: "
 read choice
 
 if [ "$choice" == "start" ]; then
-    $path/start-history-server.sh
+    #$path/start-history-server.sh
+    mapred --daemon start historyserver
     break
 elif [ "$choice" == "stop" ]; then
-    $path/stop-history-server.sh
+    #$path/stop-history-server.sh
+    mapred --daemon stop historyserver
     break
 else
     echo "Invalid choice. Please enter 'start' or 'stop'."
