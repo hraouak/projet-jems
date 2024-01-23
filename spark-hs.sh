@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path="/opt/mapr/spark/spark-2.3.1/bin"
+path="/opt/mapr/spark/spark-2.3.1/sbin"
 
 
 
@@ -11,10 +11,10 @@ echo -n "Your choice: "
 read choice
 
 if [ "$choice" == "start" ]; then
-    $path/start-history-server.sh
+    bash $path/start-history-server.sh
     break
 elif [ "$choice" == "stop" ]; then
-    $path/stop-history-server.sh
+    bash $path/stop-history-server.sh
     break
 else
     echo "Invalid choice. Please enter 'start' or 'stop'."
