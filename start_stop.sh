@@ -5,7 +5,7 @@
 hostname="maprdemo"
 
 echo 'list of services : \n'
-maprcli service list | awk '{$2, $5}' | column -t
+maprcli service list | awk '{print $2, $5}' | column -t
 echo '\n'
 
 while true; do
