@@ -11,7 +11,7 @@ jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
 
 while true; do
     choice=$(dialog --clear --backtitle "Menu" --title "Select Action" \
-                    --menu "Choose an action:" 50 50 4 \
+                    --menu "Choose an action:" 30 50 20 \
                     0 "Job Oozie" \
                     1 "Job Spark" \
                     2 "Start Job History Server" \
