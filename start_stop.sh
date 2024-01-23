@@ -10,8 +10,8 @@ jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
 
 
 while true; do
-    choice=$(dialog --clear --backtitle "Menu" \
-                    --menu "Choose an action:" 20 50 20 \
+    choice=$(dialog --clear --backtitle "Menu" --no-ok --no-cancel \
+                    --menu "Choose an action:" 17 50 20 \
                     0 "Job Oozie" \
                     1 "Job Spark" \
                     2 "Start Job History Server" \
@@ -24,12 +24,12 @@ while true; do
 
     case $choice in
         0)
-            $oozie job -oozie $oozielink -config $configpath -run
+            $oozie job -oozie $oozielink -config $configpath -run > /dev/null 2>&1
             dialog --infobox "Job Oozie executed." 5 50
             sleep 3
             ;;
         1)
-            $sparksubmit --class $classname $jarpath
+            $sparksubmit --class $classname $jarpath > /dev/null 2>&1
             dialog --infobox "Job Spark executed." 5 50
             sleep 3
             ;;
@@ -68,8 +68,8 @@ while true; do
             ;; 
         8)
             echo "Exiting..."
-            exit 0
             break
             ;;
     esac
 done
+clear
