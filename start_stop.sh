@@ -4,9 +4,10 @@
 #path="/opt/mapr/hadoop/hadoop-2.7.0/sbin"
 hostname="maprdemo"
 
-echo 'list of services : \n'
+echo 'list of services :'
+echo.
 maprcli service list | awk '{print $2, $5}' | column -t
-echo '\n'
+echo.
 
 while true; do
 echo "If you want to start the History Server, type 'start'."
