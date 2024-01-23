@@ -20,7 +20,7 @@ while true; do
                     5 "Stop Spark History Server" \
                     6 "Start all History Servers " \
                     7 "Stop all History Servers " \
-                    8 "Exit")
+                    8 "Exit"3>&1 1>&2 2>&3)
 
     case $choice in
         0)
