@@ -14,24 +14,24 @@ while true; do
     case $choice in
         1)
             maprcli node services -name historyserver -action start -nodes $hostname
-            dialog --infobox "Job History Server started." 5 30
+            dialog --infobox "Job History Server started." 5 50
             sleep 2
             ;;
         2)
             maprcli node services -name historyserver -action stop -nodes $hostname
-            dialog --infobox "Job History Server stopped." 5 30
+            dialog --infobox "Job History Server stopped." 5 50
             sleep 2
             ;;
 
         3)
             maprcli node services -name spark-historyserver -action start -nodes $hostname
-            dialog --infobox "Spark History Server started." 5 30
+            dialog --infobox "Spark History Server started." 5 50
             sleep 2
             ;;        
 
         4)
             maprcli node services -name spark-historyserver -action stop -nodes $hostname
-            dialog --infobox "Spark History Server stopped." 5 30
+            dialog --infobox "Spark History Server stopped." 5 50
             sleep 2
             ;; 
         5)
