@@ -1,7 +1,8 @@
 package com.exemple.script
 
-import org.apache.spark.sql._
 import java.io._
+import org.apache.spark.sql._
+import org.apache.spark.sql.functions.{broadcast, col}
 
 
 object App {
