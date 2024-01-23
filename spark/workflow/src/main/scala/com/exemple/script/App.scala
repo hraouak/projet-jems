@@ -1,8 +1,6 @@
 package com.exemple.script
 
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.broadcast
-
+import org.apache.spark.sql._
 import java.io._
 
 
