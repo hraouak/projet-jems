@@ -29,7 +29,7 @@ object App {
     val cleaned_na = cleaned_redundant.na.drop()
 
     // Save the cleaned dataFrame as a parquet file
-    val save_path = "/tmp/result.parquet"
+    val save_path = "/tmp/result"
     cleaned_na.write.parquet(save_path)
 
     spark.stop()
