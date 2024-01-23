@@ -2,11 +2,11 @@
 
 hostname="maprdemo"
 oozie="/opt/mapr/oozie/oozie-4.3.0/bin/oozie"
-oozie_link="http://localhost:11000/oozie"
-config_path="hive/hive_job.properties"
-spark_submit="/opt/mapr/spark/spark-2.3.1/bin/spark-submit"
-class_name="com.exemple.script.App"
-jar_path="spark/workflow/target/project-1.0-SNAPSHOT.jar"
+oozielink="http://localhost:11000/oozie"
+configpath="hive/hive_job.properties"
+sparksubmit="/opt/mapr/spark/spark-2.3.1/bin/spark-submit"
+classname="com.exemple.script.App"
+jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
 
 
 while true; do
@@ -24,12 +24,12 @@ while true; do
 
     case $choice in
         0)
-            $oozie job -oozie $oozie_link -config $config_path -run
+            $oozie job -oozie $oozielink -config $configpath -run
             dialog --infobox "Job Oozie executed." 5 50
             sleep 3
             ;;
         1)
-            $spark_submit --class $class_name $jar_path
+            $sparksubmit --class $classname $jarpath
             dialog --infobox "Job Spark executed." 5 50
             sleep 3
             ;;
