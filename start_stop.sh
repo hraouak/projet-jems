@@ -69,6 +69,7 @@ while true; do
         8)
             echo "Exiting..."
             exit 0
+            break
             ;;
     esac
 done
