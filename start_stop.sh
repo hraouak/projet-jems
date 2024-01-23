@@ -44,13 +44,11 @@ while true; do
             dialog --infobox "Job History Server stopped." 5 50
             sleep 3
             ;;
-
         4)
             maprcli node services -name spark-historyserver -action start -nodes $hostname
             dialog --infobox "Spark History Server started." 5 50
             sleep 3
-            ;;        
-
+            ;;   
         5)
             maprcli node services -name spark-historyserver -action stop -nodes $hostname
             dialog --infobox "Spark History Server stopped." 5 50
@@ -74,4 +72,3 @@ while true; do
             ;;
     esac
 done
-clear
