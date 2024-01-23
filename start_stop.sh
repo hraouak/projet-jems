@@ -13,7 +13,7 @@ while true; do
     choice=$(dialog --clear --backtitle "Menu" --title "Select Action" \
                     --menu "Choose an action:" 50 50 4 \
                     0 "Job Oozie" \
-                    1 "Job Spark" \ 
+                    1 "Job Spark" \
                     2 "Start Job History Server" \
                     3 "Stop Job History Server" \
                     4 "Start Spark History Server" \
