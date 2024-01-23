@@ -17,9 +17,9 @@ while true; do
                     2 "Start Job History Server" \
                     3 "Stop Job History Server" \
                     4 "Start Spark History Server" \
-                    5 "Stop Spark History Server "\
-                    6 "Start all History Servers "\
-                    7 "Stop all History Servers "\
+                    5 "Stop Spark History Server" \
+                    6 "Start all History Servers " \
+                    7 "Stop all History Servers " \
                     8 "Exit")
 
     case $choice in
@@ -62,8 +62,6 @@ while true; do
             dialog --infobox "All History Servers are started." 5 50
             sleep 3
             ;; 
-
-
         7)
             maprcli node services -name historyserver -action stop -nodes $hostname
             maprcli node services -name spark-historyserver -action stop -nodes $hostname
