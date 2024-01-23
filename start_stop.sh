@@ -17,14 +17,14 @@ if [ "$choice" == "start" ]; then
     #mapred --daemon start historyserver
     #bash $path/mr-jobhistory-daemon.sh start historyserver
     #bash $path/yarn-daemon.sh start historyserver
-    maprcli node services -name historyserver -action start -nodes hostname
+    maprcli node services -name historyserver -action start -nodes $hostname
     break
 elif [ "$choice" == "stop" ]; then
     #$path/stop-history-server.sh
     #mapred --daemon stop historyserver
     #bash $path/mr-jobhistory-daemon.sh stop historyserver
     #bash $path/yarn-daemon.sh stop historyserver
-    maprcli node services -name historyserver -action stop -nodes hostname
+    maprcli node services -name historyserver -action stop -nodes $hostname
     break
 else
     echo "Invalid choice. Please enter 'start' or 'stop'."
