@@ -10,6 +10,7 @@ object App {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder.appName("Spark test").config("spark.sql.warehouse.dir", "/user/mapr/hive/warehouse").enableHiveSupport().getOrCreate()
 
+    // Load dataframes
     val df1 = spark.table("artist")
     val df2 = spark.table("museum")
     val df3 = spark.table("work")
@@ -22,11 +23,15 @@ object App {
     val joined2 = selected1.join(broadcasted2, selected1("museum_id") === broadcasted2("museum_id"))
     val result = joined2.select($"artist_name",$"work_name",$"name".as("museum_name"), $"city", $"country")
 
+    // Drop redundant lines
+    val cleaned_redundant = result.dropDuplicates()
 
-    val file = new File("/tmp/result.txt")
-    val writer = new PrintWriter(file)
-    writer.write(lineCount.toString)
-    writer.close()
+    // Drop lines with NA values
+    val cleaned_na = cleaned_redundant.na.drop()
+
+    // Save the cleaned dataFrame as a JSON file
+    val path = "/tmp/result"
+    cleaned_na.write.format("json").mode("overwrite").save(path)
 
     spark.stop()
   }
