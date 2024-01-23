@@ -15,12 +15,12 @@ read choice
 if [ "$choice" == "start" ]; then
     #$path/start-history-server.sh
     #mapred --daemon start historyserver
-    $path/mr-jobhistory-daemon.sh start historyserver
+    bash $path/mr-jobhistory-daemon.sh start historyserver
     break
 elif [ "$choice" == "stop" ]; then
     #$path/stop-history-server.sh
     #mapred --daemon stop historyserver
-    $path/mr-jobhistory-daemon.sh stop historyserver
+    bash $path/mr-jobhistory-daemon.sh stop historyserver
     break
 else
     echo "Invalid choice. Please enter 'start' or 'stop'."
