@@ -18,9 +18,9 @@ while true; do
                     3 "Stop Job History Server" \
                     4 "Start Spark History Server" \
                     5 "Stop Spark History Server" \
-                    6 "Start all History Servers " \
-                    7 "Stop all History Servers " \
-                    8 "Exit"3>&1 1>&2 2>&3)
+                    6 "Start all History Servers" \
+                    7 "Stop all History Servers" \
+                    8 "Exit" 3>&1 1>&2 2>&3)
 
     case $choice in
         0)
