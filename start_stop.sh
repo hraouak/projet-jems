@@ -13,7 +13,7 @@ expected_user="mapr@EXAMPLE.COM"
 tickets=$(klist)
 n=$(tickets | wc -l)
 if [ n != 1]; then
-    current_user=$(klist | awk '{print $3}')
+    current_user=$(klist | awk 'NR==2 {print $3}')
     if [ "$current_user" == "$expected_user" ]; then
         while true; do
             choice=$(dialog --clear --backtitle "Menu" --no-ok --no-cancel \
