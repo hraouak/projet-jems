@@ -79,6 +79,10 @@ if [ "$n" != "1" ]; then
             esac
         done
     fi
+else
+    echo "No valid Kerberos ticket found. Please obtain a ticket before running this script."
+    exit 1
 fi
+
 
 clear
