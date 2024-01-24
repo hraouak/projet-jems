@@ -5,7 +5,7 @@
 
   tasks:
 
-  - name: install display
+  - name: install dialog
     yum:
       name: dialog
       state: latest
@@ -28,3 +28,12 @@
 
   - name: Create HDFS Directory
     command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/work"
+  
+  - name: Copy csv to HDFS
+    command: "hadoop dfs -put ../data/artist/artist.csv /user/vagrant/projet-jems/data/artist/artist.csv"
+
+  - name: Copy csv to HDFS
+    command: "hadoop dfs -put ../data/museum/museum.csv /user/vagrant/projet-jems/data/museum/museum.csv"
+
+  - name: Copy csv to HDFS
+    command: "hadoop dfs -put ../data/work/work.csv /user/vagrant/projet-jems/data/work/work.csv"
