@@ -12,6 +12,8 @@ Here's a step by step guide
     - SSH VM
     $ vagrant ssh
 
+vagrant plugin install vagrant-vbguest
+vagrant vbguest --do install --no-cleanup
 
 
 
