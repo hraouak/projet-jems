@@ -9,10 +9,7 @@ Here's a step by step guide
     $ vagrant up
     - SSH VM
     $ vagrant ssh
-2) Install of ansible
-sudo yum --disablerepo=MapR_Installer install ansible
-3) install of git
-sudo yum --disablerepo=MapR_Installer install git
+
 
 
 
