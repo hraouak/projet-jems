@@ -9,7 +9,7 @@ classname="com.exemple.script.App"
 jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
 
 expected_user="mapr@EXAMPLE.COM"
-current_user=$(klist | awk '{print $3}')
+current_user=$(klist | awk 'NR==2 {print $3}')
 
 
 if [ "$current_user" == "$expected_user" ]; then
@@ -77,4 +77,4 @@ if [ "$current_user" == "$expected_user" ]; then
         esac
     done
 fi
-clear
+
