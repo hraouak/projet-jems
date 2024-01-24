@@ -4,7 +4,9 @@
   become: true
 
   tasks:
-    - name: install display
+
+  - name: install display
       yum:
         name: display
         state: latest
+        disablerepo: MapR_Installer,MapR_Ecosystem,MapR_Core
