@@ -2,24 +2,21 @@ Here's a step by step guide
 
 NB: the user is "mapr" and the password too.
 
-- Start VM
-$ vagrant up
+-Start VM
 
-- Copy files
-vagrant scp ../ansible vm-projet:/home/mapr/ansible
-vagrant scp ../app vm-projet:/home/mapr/app
-vagrant scp ../data vm-projet:/home/mapr/data
-vagrant scp ../hive vm-projet:/home/mapr/hive
-vagrant scp ../spark vm-projet:/home/mapr/spark
-
-- SSH VM
-$ vagrant ssh
-
-- install ansible
 sudo yum-config-manager --save --setopt=MapR_Core.skip_if_unavailable=true
 sudo yum-config-manager --save --setopt=MapR_Ecosystem.skip_if_unavailable=true
 sudo yum-config-manager --save --setopt=MapR_Installer.skip_if_unavailable=true
+
+- install ansible
 sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install ansible -y
+
+- install git
+sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install git -y
+
+- get app file
+git clone https://github.com/hraouak/projet-jems.git
+
 
 
 
