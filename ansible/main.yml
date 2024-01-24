@@ -1,0 +1,10 @@
+---
+- name: main playbook
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: install display
+      yum:
+        name: display
+        state: latest
