@@ -1,3 +1,37 @@
+Here's a step by step guide 
+
+1) VM Creation
+    - Add box of MapR
+    $ vagrant box add  name-of-your-box.box --name new-box-name --force
+	- Init Vagrant
+    $ vagrant init
+    - Start VM
+    $ vagrant up
+    - SSH VM
+    $ vagrant ssh
+2) Install of ansible
+sudo yum --disablerepo=MapR_Installer install ansible
+3) install of git
+sudo yum --disablerepo=MapR_Installer install git
+
+
+
+
+
+
+
+0) Turn down VM
+    $ Vagrant halt
+
+And enjoy!
+
+
+
+
+
+
+
+
 oozie : /opt/mapr/oozie/oozie-4.3.0/bin/oozie job -oozie "http://localhost:11000/oozie" -config hive/hive_job.properties -run
 
 
