@@ -37,3 +37,18 @@
 
   - name: Copy csv to HDFS
     command: "hadoop dfs -put ../data/work/work.csv /user/vagrant/projet-jems/data/work/work.csv"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/hive"
+
+  - name: Copy sql to HDFS
+    command: "hadoop dfs -put ../hive/artist.sql /user/vagrant/projet-jems/hive/artist.sql"
+
+  - name: Copy sql to HDFS
+    command: "hadoop dfs -put ../hive/museum.sql /user/vagrant/projet-jems/hive/museum.sql"
+
+  - name: Copy sql to HDFS
+    command: "hadoop dfs -put ../hive/work.sql /user/vagrant/projet-jems/hive/work.sql"
+
+  - name: Copy workflow to HDFS
+    command: "hadoop dfs -put ../hive/workflow.xml /user/vagrant/projet-jems/hive/workflow.xml"
