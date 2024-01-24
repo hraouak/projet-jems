@@ -11,8 +11,8 @@ jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
 expected_user="mapr@EXAMPLE.COM"
 
 tickets=$(klist)
-n=$(tickets | wc -l)
-if [ n != 1]; then
+n=$(echo "$tickets" | wc -l)
+if [ echo $n != 1]; then
     current_user=$(klist | awk 'NR==2 {print $3}')
     if [ "$current_user" == "$expected_user" ]; then
         while true; do
