@@ -1,14 +1,18 @@
 Here's a step by step guide 
 
 1) VM Creation
-    - Add box of MapR
-    $ vagrant box add  name-of-your-box.box --name new-box-name --force
-	- Init Vagrant
-    $ vagrant init
     - Start VM
     $ vagrant up
     - provision vm
     $ vagrant provision
+    - install plugin
+    $ vagrant plugin install vagrant-scp
+    - Copy files
+    $ vagrant scp ../ansible vm-projet:/home/vagrant/ansible
+    $ vagrant scp ../app vm-projet:/home/vagrant/app
+    $ vagrant scp ../data vm-projet:/home/vagrant/data
+    $ vagrant scp ../hive vm-projet:/home/vagrant/hive
+    $ vagrant scp ../spark vm-projet:/home/vagrant/spark
     - SSH VM
     $ vagrant ssh
 
