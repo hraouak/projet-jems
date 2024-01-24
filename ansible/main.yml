@@ -12,43 +12,40 @@
       disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems"
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data"
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/artist"
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/artist"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/museum"
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/museum"
-
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/work"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/work"
   
   - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/artist/artist.csv /user/vagrant/projet-jems/data/artist/artist.csv"
+    command: "hadoop dfs -put ../data/artist/artist.csv /user/mapr/projet-jems/data/artist/artist.csv"
 
   - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/museum/museum.csv /user/vagrant/projet-jems/data/museum/museum.csv"
+    command: "hadoop dfs -put ../data/museum/museum.csv /user/mapr/projet-jems/data/museum/museum.csv"
 
   - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/work/work.csv /user/vagrant/projet-jems/data/work/work.csv"
+    command: "hadoop dfs -put ../data/work/work.csv /user/mapr/projet-jems/data/work/work.csv"
 
   - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/hive"
+    command: "hadoop dfs -mkdir /user/mapr/projet-jems/hive"
 
   - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/artist.sql /user/vagrant/projet-jems/hive/artist.sql"
+    command: "hadoop dfs -put ../hive/artist.sql /user/mapr/projet-jems/hive/artist.sql"
 
   - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/museum.sql /user/vagrant/projet-jems/hive/museum.sql"
+    command: "hadoop dfs -put ../hive/museum.sql /user/mapr/projet-jems/hive/museum.sql"
 
   - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/work.sql /user/vagrant/projet-jems/hive/work.sql"
+    command: "hadoop dfs -put ../hive/work.sql /user/mapr/projet-jems/hive/work.sql"
 
   - name: Copy workflow to HDFS
-    command: "hadoop dfs -put ../hive/workflow.xml /user/vagrant/projet-jems/hive/workflow.xml"
+    command: "hadoop dfs -put ../hive/workflow.xml /user/mapr/projet-jems/hive/workflow.xml"

@@ -6,4 +6,4 @@ artist_id STRING,
 style STRING,
 museum_id STRING)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-LOCATION '/user/vagrant/projet-jems/data/work';
+LOCATION '/user/mapr/projet-jems/data/work';

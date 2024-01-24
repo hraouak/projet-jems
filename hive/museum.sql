@@ -10,4 +10,4 @@ country STRING,
 phone STRING,
 url STRING)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-LOCATION '/user/vagrant/projet-jems/data/museum';
+LOCATION '/user/mapr/projet-jems/data/museum';

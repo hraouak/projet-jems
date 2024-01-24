@@ -10,4 +10,4 @@ style STRING,
 birth STRING,
 death STRING)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-LOCATION '/user/vagrant/projet-jems/data/artist';
+LOCATION '/user/mapr/projet-jems/data/artist';
