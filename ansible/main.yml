@@ -10,3 +10,21 @@
       name: dialog
       state: latest
       disablerepo: MapR_Installer,MapR_Ecosystem,MapR_Core
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/artist"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/museum"
+
+  - name: Create HDFS Directory
+    command: "hadoop dfs -mkdir /user/vagrant/projet-jems/data/work"
