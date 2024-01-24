@@ -3,7 +3,6 @@
 
 Vagrant.configure("2") do |config|
   config.vm.define "vm-projet" do |vm|
-    vm.vm.name = "vm-projet"
     vm.vm.box = "mapr-test"
     vm.vm.provision "shell", inline: <<-SHELL
       sudo yum-config-manager --save --setopt=MapR_Core.skip_if_unavailable=true
