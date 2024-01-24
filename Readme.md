@@ -7,6 +7,8 @@ Here's a step by step guide
     $ vagrant init
     - Start VM
     $ vagrant up
+    - provision vm
+    $ vagrant provision
     - SSH VM
     $ vagrant ssh
 

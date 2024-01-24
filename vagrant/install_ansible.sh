@@ -1,1 +1,1 @@
-sudo yum --disablerepo=MapR_Installer install ansible
+sudo yum --disablerepo=MapR_Installer install ansible -y
