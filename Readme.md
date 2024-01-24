@@ -3,18 +3,22 @@ Here's a step by step guide
 
 - Start VM
 $ vagrant up
+
 - Copy files
-$ vagrant scp ../ansible vm-projet:/home/vagrant/ansible
-$ vagrant scp ../app vm-projet:/home/vagrant/app
-$ vagrant scp ../data vm-projet:/home/vagrant/data
-$ vagrant scp ../hive vm-projet:/home/vagrant/hive
-$ vagrant scp ../spark vm-projet:/home/vagrant/spark
+vagrant scp ../ansible vm-projet:/home/vagrant/ansible
+vagrant scp ../app vm-projet:/home/vagrant/app
+vagrant scp ../data vm-projet:/home/vagrant/data
+vagrant scp ../hive vm-projet:/home/vagrant/hive
+vagrant scp ../spark vm-projet:/home/vagrant/spark
+
 - SSH VM
 $ vagrant ssh
+
 - install ansible
-$ sudo yum-config-manager --save --setopt=MapR_Coreskip_if_unavailable=true
-$ sudo yum-config-manager --save --setopt=MapR_Ecosystem.skip_if_unavailable=true
-$ sudo yum --disablerepo=MapR_Installer --disablerepo=MapR_Ecosystem install ansible -y
+sudo yum-config-manager --save --setopt=MapR_Core.skip_if_unavailable=true
+sudo yum-config-manager --save --setopt=MapR_Ecosystem.skip_if_unavailable=true
+sudo yum-config-manager --save --setopt=MapR_Installer.skip_if_unavailable=true
+sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install ansible -y
 
 
 

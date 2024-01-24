@@ -9,7 +9,7 @@
     yum:
       name: dialog
       state: latest
-      disablerepo: MapR_Installer,MapR_Ecosystem,MapR_Core
+      disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
   - name: Create HDFS Directory
     command: "hadoop dfs -mkdir /user/vagrant"

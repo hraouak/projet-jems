@@ -4,11 +4,13 @@
 ports = {
   8888 => 8888,
   8443 => 8443,
+  10000 => 10000,
   11000 => 11000,
 }
 
 Vagrant.configure("2") do |config|
   config.vbguest.auto_update = false
+  config.ssh.username = "mapr"
   config.vm.define "vm-projet" do |vm|
     vm.vm.box = "mapr-test"
     ports.each do |guest, host|
