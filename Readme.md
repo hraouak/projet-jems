@@ -1,15 +1,16 @@
 Here's a step by step guide 
 
+NB: the user is "mapr" and the password too.
 
 - Start VM
 $ vagrant up
 
 - Copy files
-vagrant scp ../ansible vm-projet:/home/vagrant/ansible
-vagrant scp ../app vm-projet:/home/vagrant/app
-vagrant scp ../data vm-projet:/home/vagrant/data
-vagrant scp ../hive vm-projet:/home/vagrant/hive
-vagrant scp ../spark vm-projet:/home/vagrant/spark
+vagrant scp ../ansible vm-projet:/home/mapr/ansible
+vagrant scp ../app vm-projet:/home/mapr/app
+vagrant scp ../data vm-projet:/home/mapr/data
+vagrant scp ../hive vm-projet:/home/mapr/hive
+vagrant scp ../spark vm-projet:/home/mapr/spark
 
 - SSH VM
 $ vagrant ssh
