@@ -4,5 +4,5 @@
 - name: Create incognito user
   shell: sudo useradd incognito
 
-- name: Define password:
+- name: Define password
   shell: echo -e "incognito\nincognito\n" | sudo passwd newuser
