@@ -1,25 +1,25 @@
 ---
 # tasks file for yum
-- name: install dialog
+- name: Install dialog
   yum:
     name: dialog
     state: latest
     disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
-- name: install kerberos server
+- name: Install kerberos server
   yum:
     name: krb5-server
     state: latest
     disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
-- name: install kerberos libraries
+- name: Install kerberos libraries
   yum:
     name: krb5-libs
     state: latest
     disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
-- name: install kerberos workstation
+- name: Install kerberos workstation
   yum:
-    name: krb5-libs
+    name: krb5-workstation
     state: latest
     disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
