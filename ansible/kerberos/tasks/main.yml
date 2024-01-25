@@ -10,9 +10,6 @@
     path: /etc/krb5.conf
     mode: '0644'
 
-- name: Restart kerberos services
-  command: "systemctl restart krb5kdc kadmin"
-
 - name: Initialize Kerberos Database
   shell: echo -e "mapr\nmapr\n" | kdb5_util create -r EXAMPLE.COM -s
 
@@ -21,3 +18,6 @@
 
 - name: Obtain Kerberos Ticket
   shell: echo -e "mapr" | kinit mapr
+
+- name: Restart kerberos services
+  command: "systemctl restart krb5kdc kadmin"

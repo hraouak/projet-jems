@@ -30,21 +30,11 @@ sudo kdb5_util create -r EXAMPLE.COM -s
 echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
 echo -e "mapr" | kinit mapr
 
+- Show tickets
 klist
 
-
-
-vagrant plugin install vagrant-vbguest
-vagrant vbguest --do install --no-cleanup
-
-
-
-
-
-
-
-0) Turn down VM
-    $ Vagrant halt
+- Obtain new ticket
+echo -e "mapr" | kinit mapr
 
 And enjoy!
 
