@@ -13,13 +13,12 @@
 - name: Restart kerberos services
   shell: sudo systemctl restart krb5kdc kadmin
 
-
 - name: Create Kerberos Principal
   shell: echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
   become_user: mapr
 
 - name: Obtain Kerberos Ticket
-  shell: echo -e "mapr\n" | sudo kinit mapr
+  shell: echo -e "mapr\n" | kinit mapr
   become_user: mapr
 
 
