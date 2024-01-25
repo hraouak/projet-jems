@@ -19,7 +19,7 @@
   command: "rm {{ filename }}"
 
 - name: Clean packages
-  command: "{{ path }}/{{ new_foldername }}/bin/mvn clean -f spark/"
+  command: "{{ path }}/{{ new_foldername }}/bin/mvn clean -f ../spark/"
 
 - name: Build packages
-  command: "{{ path }}/{{ new_foldername }}/bin/mvn package -f spark/"
+  command: "{{ path }}/{{ new_foldername }}/bin/mvn package -f ../spark/"
