@@ -5,8 +5,8 @@
 
   roles:
     - yum
-    - maven
-    - hdfs
+    #- maven
+    #- hdfs
     - kerberos
 
 

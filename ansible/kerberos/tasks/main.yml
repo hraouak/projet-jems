@@ -11,7 +11,7 @@
     mode: '0644'
 
 - name: Initialize Kerberos Database
-  shell: echo -e "mapr\nmapr\n" | kdb5_util create -r EXAMPLE.COM -s
+  shell: echo -e "mapr\nmapr\n" | sudo kdb5_util create -r EXAMPLE.COM -s
 
 - name: Create Kerberos Principal
   shell: echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
