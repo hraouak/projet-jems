@@ -22,6 +22,18 @@ ansible-playbook ansible/main.yml
 
 
 
+sudo mv -f kerberos/krb5.conf /etc/krb5.conf
+sudo chmod 644 /etc/krb5.conf
+sudo systemctl restart krb5kdc kadmin
+sleep 5
+sudo kdb5_util create -r EXAMPLE.COM -s
+echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
+echo -e "mapr" | kinit mapr
+
+klist
+
+
+
 vagrant plugin install vagrant-vbguest
 vagrant vbguest --do install --no-cleanup
 

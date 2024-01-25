@@ -5,3 +5,21 @@
     name: dialog
     state: latest
     disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
+
+- name: install kerberos server
+  yum:
+    name: krb5-server
+    state: latest
+    disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
+
+- name: install kerberos libraries
+  yum:
+    name: krb5-libs
+    state: latest
+    disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
+
+- name: install kerberos workstation
+  yum:
+    name: krb5-libs
+    state: latest
+    disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
