@@ -28,12 +28,6 @@
   become: yes
   notify: Wait for Services
 
-- name: Wait for Services
-  ansible.builtin.wait_for:
-    timeout: 5
-    state: started
-
-
 - name: Obtain Kerberos Ticket
   shell: echo -e "mapr" | kinit mapr
 
