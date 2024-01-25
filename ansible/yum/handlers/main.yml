@@ -1,6 +1,2 @@
 ---
 # handlers file for yum
-- name: Wait for Services
-  ansible.builtin.wait_for:
-    timeout: 5
-    state: started
