@@ -2,7 +2,6 @@
 - name: main playbook
   hosts: localhost
   become: yes
-  become_user: mapr
 
   roles:
     - yum
