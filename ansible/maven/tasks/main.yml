@@ -1,2 +1,27 @@
 ---
 # tasks file for maven
+- name: Delete old installation if exists
+  command: "rm -rf {{ path }}"
+
+- name: Download Apach Maven
+  command: "wget --no-check-certificate {{ url }}"
+
+- name: Extract Archive
+  command: "tar -zxvf {{ filename }}"
+
+- name: Create maven folder
+  command: "mkdir {{ path }}"
+
+- name: Move maven binaries
+  command: "mv {{ foldername }} {{ path }}/{{ new_foldername }}"
+
+- name: Remove archive
+  command: "rm {{ filename }}"
+
+- name: Go to
+
+- name: Clean packages
+  command: "{{ path }}/{{ new_foldername }}/bin/mvn clean -f spark/"
+
+- name: Build packages
+  command: "{{ path }}/{{ new_foldername }}/bin/mvn package -f spark/"
