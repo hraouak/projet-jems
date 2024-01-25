@@ -1,6 +1,2 @@
 ---
 # handlers file for kerberos
-- name: Wait for Services
-  ansible.builtin.wait_for:
-    timeout: 5
-    state: started
