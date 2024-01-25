@@ -5,4 +5,4 @@
   shell: sudo useradd incognito
 
 - name: Define password
-  shell: echo -e "incognito\nincognito\n" | sudo passwd newuser
+  shell: echo -e "incognito\nincognito\n" | sudo passwd incognito
