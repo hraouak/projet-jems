@@ -1,13 +1,16 @@
 ---
 # tasks file for kerberos
 - name: Copy krb5.conf
-  shell: sudo mv -f ../kerberos/krb5.conf /etc/krb5.conf
+  shell: sudo cp -f ../kerberos/krb5.conf /etc/krb5.conf
 
 - name: Set permissions on krb5.conf
-  shell: sudo chmod 644 /etc/krb5.conf
+  shell: sudo chmod +x /etc/krb5.conf
 
 - name: Initialize Kerberos Database
   shell: echo -e "mapr\nmapr\n" | sudo kdb5_util create -r EXAMPLE.COM -s
+
+- name: Restart kerberos services
+  shell: sudo systemctl restart krb5kdc kadmin
 
 - name: Create Kerberos Principal
   shell: echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
