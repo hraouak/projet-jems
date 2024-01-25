@@ -1,14 +1,10 @@
 ---
 # tasks file for kerberos
 - name: Copy krb5.conf
-  copy:
-    src: ../kerberos/krb5.conf
-    dest: /etc/krb5.conf
+  shell: sudo mv -f ../kerberos/krb5.conf /etc/krb5.conf
 
 - name: Set permissions on krb5.conf
-  file:
-    path: /etc/krb5.conf
-    mode: '0644'
+  shell: sudo chmod 644 /etc/krb5.conf
 
 - name: Initialize Kerberos Database
   shell: echo -e "mapr\nmapr\n" | sudo kdb5_util create -r EXAMPLE.COM -s
@@ -16,21 +12,7 @@
 - name: Create Kerberos Principal
   shell: echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
 
-- name: Restart Kerberos Services
-  ansible.builtin.systemd:
-    name: "{{ item }}"
-    state: restarted
-  with_items:
-    - krb5kdc
-    - kadmin
-  become: yes
-
-- name: Wait for Services
-  ansible.builtin.wait_for:
-    timeout: 5
-    state: started
-
 - name: Obtain Kerberos Ticket
-  shell: echo -e "mapr" | kinit mapr
+  shell: echo -e "mapr\n" | kinit mapr
 
 
