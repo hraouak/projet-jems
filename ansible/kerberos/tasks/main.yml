@@ -23,8 +23,6 @@
   with_items:
     - krb5kdc
     - kadmin
-  async: 1
-  poll: 0
   become: yes
   notify: Wait for Services
 
