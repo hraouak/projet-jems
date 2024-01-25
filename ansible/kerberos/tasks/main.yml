@@ -2,7 +2,7 @@
 # tasks file for kerberos
 - name: Copy krb5.conf
   copy:
-    src: kerberos/krb5.conf
+    src: ../kerberos/krb5.conf
     dest: /etc/krb5.conf
 
 - name: Set permissions on krb5.conf
