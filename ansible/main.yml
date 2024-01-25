@@ -3,49 +3,10 @@
   hosts: localhost
   become: true
 
-  tasks:
+  roles:
+    - yum
+    - hdfs
 
-  - name: install dialog
-    yum:
-      name: dialog
-      state: latest
-      disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer
 
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems"
 
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data"
-
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/artist"
-
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/museum"
-
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems/data/work"
   
-  - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/artist/artist.csv /user/mapr/projet-jems/data/artist/artist.csv"
-
-  - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/museum/museum.csv /user/mapr/projet-jems/data/museum/museum.csv"
-
-  - name: Copy csv to HDFS
-    command: "hadoop dfs -put ../data/work/work.csv /user/mapr/projet-jems/data/work/work.csv"
-
-  - name: Create HDFS Directory
-    command: "hadoop dfs -mkdir /user/mapr/projet-jems/hive"
-
-  - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/artist.sql /user/mapr/projet-jems/hive/artist.sql"
-
-  - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/museum.sql /user/mapr/projet-jems/hive/museum.sql"
-
-  - name: Copy sql to HDFS
-    command: "hadoop dfs -put ../hive/work.sql /user/mapr/projet-jems/hive/work.sql"
-
-  - name: Copy workflow to HDFS
-    command: "hadoop dfs -put ../hive/workflow.xml /user/mapr/projet-jems/hive/workflow.xml"

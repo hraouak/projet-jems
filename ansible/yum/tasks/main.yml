@@ -1,2 +1,7 @@
 ---
 # tasks file for yum
+- name: install dialog
+  yum:
+    name: dialog
+    state: latest
+    disablerepo: MapR_Core,MapR_Ecosystem,MapR_Installer

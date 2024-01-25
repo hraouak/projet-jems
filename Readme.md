@@ -16,9 +16,7 @@ sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR
 
 - get app file
 git clone https://github.com/hraouak/projet-jems.git
-
 cd projet-jems
-
 ansible-playbook ansible/main.yml
 
 
