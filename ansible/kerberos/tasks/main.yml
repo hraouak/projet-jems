@@ -16,6 +16,6 @@
   shell: echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
 
 - name: Obtain Kerberos Ticket
-  shell: echo -e "mapr\n" | kinit mapr
+  shell: echo -e "mapr\n" | sudo kinit mapr
 
 
