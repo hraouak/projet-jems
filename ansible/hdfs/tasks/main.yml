@@ -1,10 +1,7 @@
 ---
 # tasks file for hdfs
 - name: Remove the main HDFS Directory directory and its contents
-  ansible.builtin.file:
-    path: /user/mapr/projet-jems
-    state: absent
-    recurse: yes
+  command: "rm -rf /user/mapr/projet-jems"
 
 - name: Create HDFS Directory
   command: "hadoop dfs -mkdir /user/mapr/projet-jems"
