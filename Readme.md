@@ -1,4 +1,4 @@
-# MapR Setup Guide
+# Setup Guide
 
 This guide provides step-by-step instructions. Follow these steps to ensure a smooth installation process.
 
