@@ -1,61 +1,73 @@
-Here's a step by step guide 
+# MapR Setup Guide
 
-NB: the user is "mapr" and the password too.
+This guide provides step-by-step instructions. Follow these steps to ensure a smooth installation process.
 
--Start VM
+## Prerequisites
+- MapR 6.1.0 VM is already installed and started.
 
+## 1. Make the user "mapr" a sudoer
+```bash
+su -
+nano /etc/sudoers
+```
+Add the following line :
+
+```bash
+mapr    ALL=(ALL) NOPASSWD: ALL
+```
+
+Exit the editor
+```bash
+exit
+```
+
+## 2. Make the user "mapr" a sudoer
+```bash
 sudo yum-config-manager --save --setopt=MapR_Core.skip_if_unavailable=true
 sudo yum-config-manager --save --setopt=MapR_Ecosystem.skip_if_unavailable=true
 sudo yum-config-manager --save --setopt=MapR_Installer.skip_if_unavailable=true
+```
 
-- install ansible
+## 3. Install Ansible
+```bash
 sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install ansible -y
+```
 
-- install git
-sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install git -y
+## 4. Install Git
+```bash
+sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install ansible -y
+```
 
-- get app file
+## 5. Get the application files
+```bash
 git clone https://github.com/hraouak/projet-jems.git
 cd projet-jems
+```
+
+## 6. Configure cluster
+```bash
 ansible-playbook ansible/main.yml
+```
+Your MapR cluster is now complete. Have a great experience using the application!
 
+## 7. Run the application
+```bash
+bash app/start_stop.sh
+```
 
-
-
-sudo cp -f kerberos/krb5.conf /etc/krb5.conf
-sudo chmod +x /etc/krb5.conf
-echo -e "mapr\nmapr\n" | sudo kdb5_util create -r EXAMPLE.COM -s
-echo -e "addprinc mapr\nmapr\nmapr\nquit" | sudo kadmin.local
-sudo systemctl restart krb5kdc kadmin
-sleep 5
-echo -e "mapr" | kinit mapr
-
-
-
-
-
-
-
-
-
-
-
-- Show tickets
+## 8. Optional
+### Show tickets
+```bash
 klist
-
-- Obtain new ticket
+```
+### Obtain a new ticket if needed
+```bash
 echo -e "mapr" | kinit mapr
+```
 
-And enjoy!
-
-
-
+Enjoy!
 
 
 
 
 
-oozie : /opt/mapr/oozie/oozie-4.3.0/bin/oozie job -oozie "http://localhost:11000/oozie" -config hive/hive_job.properties -run
-
-
-spark-submit : /opt/mapr/spark/spark-2.3.1/bin/spark-submit --class com.exemple.script.App target/project-1.0-SNAPSHOT.jar
