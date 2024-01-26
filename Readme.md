@@ -1,5 +1,5 @@
 # Setup Guide
-<img src="mapr.png" alt="Image 1" style="width: 45%; margin-right: 5px;">
+<img src="mapr.png" alt="Image 1" style="width: 45%">
 <img src="jems.jpeg" alt="Image 2" style="width: 25%;">
 
 This guide provides step-by-step instructions. Follow these steps to ensure a smooth installation process.
