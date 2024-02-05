@@ -21,7 +21,7 @@ Exit the editor
 exit
 ```
 
-## 2. Make the user "mapr" a sudoer
+## 2. Configure yum manager
 ```bash
 sudo yum-config-manager --save --setopt=MapR_Core.skip_if_unavailable=true
 sudo yum-config-manager --save --setopt=MapR_Ecosystem.skip_if_unavailable=true
@@ -35,7 +35,7 @@ sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR
 
 ## 4. Install Git
 ```bash
-sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install ansible -y
+sudo yum --disablerepo=MapR_Core --disablerepo=MapR_Ecosystem --disablerepo=MapR_Installer install git -y
 ```
 
 ## 5. Get the application files
@@ -68,6 +68,7 @@ echo -e "mapr" | kinit mapr
 Enjoy!
 
 
-
-
-
+# Source of Data
+```bash
+https://data.world/atlas-query/paintings
+```

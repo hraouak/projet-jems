@@ -30,7 +30,7 @@ object App {
 
     // Save the cleaned dataFrame as a parquet file
     val save_path = "/tmp/result"
-    cleaned_na.write.parquet(save_path)
+    cleaned_na.write.mode("overwrite").parquet(save_path)
 
     spark.stop()
   }

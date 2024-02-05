@@ -6,7 +6,7 @@ oozielink="http://localhost:11000/oozie"
 configpath="hive/hive_job.properties"
 sparksubmit="/opt/mapr/spark/spark-2.3.1/bin/spark-submit"
 classname="com.exemple.script.App"
-jarpath="spark/workflow/target/project-1.0-SNAPSHOT.jar"
+jarpath="spark/target/project-1.0-SNAPSHOT.jar"
 
 expected_user="mapr@EXAMPLE.COM"
 
