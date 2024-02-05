@@ -4,6 +4,7 @@ import java.io._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions.{broadcast, col}
 
+import scala.util.Random
 
 object App {
   def main(args: Array[String]): Unit = {
@@ -28,9 +29,13 @@ object App {
     // Drop lines with NA values
     val cleaned_na = cleaned_redundant.na.drop()
 
+    // Generate a random number between 1 and 1000
+    val randomNumber = Random.nextInt(1000) + 1
+
     // Save the cleaned dataFrame as a parquet file
     val save_path = "/tmp/result"
-    cleaned_na.write.mode("overwrite").parquet(save_path)
+    val save_path_suffix = s"$save_path-$randomNumber"
+    cleaned_na.write.parquet(save_path_suffix)
 
     spark.stop()
   }
